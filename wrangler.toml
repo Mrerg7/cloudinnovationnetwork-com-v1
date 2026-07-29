@@ -1,6 +1,6 @@
 # Cloudflare Workers Static Assets configuration
 # Pure static site — no Worker script / no adapter required
-name = "cloudinnovationnetwork-com"
+name = "cloudinnovationnetwork-com-v1"
 compatibility_date = "2026-07-29"
 
 [assets]
