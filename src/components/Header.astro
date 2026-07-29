@@ -1,0 +1,40 @@
+---
+const navItems = [
+  { href: '#insights', label: 'Insights' },
+  { href: '#trends', label: 'Trends' },
+  { href: '#opportunity', label: 'Opportunity' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-ink-950/80 backdrop-blur-xl">
+  <div class="container-narrow flex h-16 items-center justify-between sm:h-18">
+    <a href="/" class="group flex items-center gap-2.5" aria-label="Cloud Innovation Network home">
+      <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-cloud-400 to-cloud-600 shadow-lg shadow-cloud-500/20 transition group-hover:shadow-cloud-400/40">
+        <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+        </svg>
+      </div>
+      <span class="text-sm font-semibold tracking-tight text-white sm:text-base">
+        Cloud Innovation <span class="text-cloud-400">Network</span>
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-8 md:flex" aria-label="Primary">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class="text-sm font-medium text-ink-300 transition hover:text-white"
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <a
+      href="mailto:sales@desertrich.com?subject=Domain%20Inquiry%20%E2%80%94%20cloudinnovationnetwork.com"
+      class="btn-primary text-xs sm:text-sm !px-4 !py-2 sm:!px-5 sm:!py-2.5"
+    >
+      Acquire Domain
+    </a>
+  </div>
+</header>
