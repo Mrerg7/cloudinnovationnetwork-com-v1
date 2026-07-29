@@ -1,0 +1,242 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const stats = [
+  {
+    value: '$905B+',
+    label: 'Global Cloud Market 2026',
+    detail: 'Projected to exceed $1T this year',
+  },
+  {
+    value: '94%+',
+    label: 'Enterprise Adoption',
+    detail: 'Organizations using cloud services',
+  },
+  {
+    value: '21.3%',
+    label: 'Public Cloud Growth',
+    detail: 'Gartner forecast for 2026 spending',
+  },
+  {
+    value: '$129B',
+    label: 'Q1 2026 Infra Spend',
+    detail: 'Record quarterly infrastructure revenue',
+  },
+];
+
+const trends = [
+  {
+    title: 'AI-Native Infrastructure',
+    description:
+      'Hyperscalers are redirecting hundreds of billions into GPU clusters and specialized silicon. AI inference and training workloads now dominate new capacity planning and capital allocation across AWS, Azure, and Google Cloud.',
+    icon: 'cpu',
+  },
+  {
+    title: 'Hybrid & Multi-Cloud Maturity',
+    description:
+      'Enterprises increasingly treat public, private, and edge environments as a single fabric. Platform engineering, Kubernetes, and service mesh patterns enable consistent policy, observability, and developer experience across clouds.',
+    icon: 'layers',
+  },
+  {
+    title: 'Edge & Distributed Compute',
+    description:
+      'Latency-sensitive applications and data-sovereignty requirements are pushing compute closer to users and devices. Cloudflare, AWS Local Zones, Azure Edge Zones, and telecom partnerships expand the reach of cloud runtimes.',
+    icon: 'globe',
+  },
+  {
+    title: 'FinOps & Sustainable Cloud',
+    description:
+      'Cost visibility, waste reduction, and carbon-aware scheduling have become first-class concerns. Organizations now measure unit economics of every workload while aligning infrastructure decisions with sustainability goals.',
+    icon: 'leaf',
+  },
+];
+
+const providers = [
+  { name: 'AWS', share: '28–30%', note: 'Market leader by revenue' },
+  { name: 'Microsoft Azure', share: '21–25%', note: 'Strong enterprise & AI growth' },
+  { name: 'Google Cloud', share: '13–14%', note: 'Fastest major growth rate' },
+];
+---
+
+<Layout>
+  <Header />
+
+  <main>
+    <!-- Hero -->
+    <section class="relative overflow-hidden pt-28 pb-16 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-32">
+      <div class="pointer-events-none absolute inset-0 bg-hero-glow" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cloud-900/20 via-transparent to-transparent" aria-hidden="true"></div>
+
+      <div class="container-narrow relative">
+        <div class="mx-auto max-w-4xl text-center">
+          <p class="mb-6 inline-flex items-center gap-2 rounded-full border border-cloud-500/20 bg-cloud-500/10 px-4 py-1.5 text-xs font-medium text-cloud-300">
+            <span class="h-1.5 w-1.5 rounded-full bg-cloud-400"></span>
+            Cloud Computing · 2026 Insights
+          </p>
+
+          <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+            The network for
+            <span class="bg-gradient-to-r from-cloud-300 via-cloud-400 to-sky-300 bg-clip-text text-transparent">
+              cloud innovation
+            </span>
+          </h1>
+
+          <p class="mx-auto mt-6 max-w-2xl text-lg text-ink-300 sm:text-xl">
+            Exploring the platforms, architectures, and strategic shifts that define the next decade of cloud computing — from AI infrastructure to global edge delivery.
+          </p>
+
+          <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <a href="#insights" class="btn-primary">
+              Explore Insights
+              <svg class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </a>
+            <a
+              href="mailto:sales@desertrich.com?subject=Domain%20Inquiry%20%E2%80%94%20cloudinnovationnetwork.com"
+              class="btn-secondary"
+            >
+              Domain Acquisition
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Market Snapshot -->
+    <section id="insights" class="section-padding border-t border-white/5 bg-ink-900/40">
+      <div class="container-narrow">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            Cloud Market Snapshot · 2026
+          </h2>
+          <p class="mt-4 text-ink-300">
+            The cloud computing industry continues its rapid expansion, fueled by generative AI, enterprise modernization, and global digital transformation.
+          </p>
+        </div>
+
+        <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {stats.map((stat) => (
+            <div class="card p-6 text-center">
+              <p class="text-3xl font-bold tracking-tight text-cloud-400 sm:text-4xl">{stat.value}</p>
+              <p class="mt-2 text-sm font-semibold text-white">{stat.label}</p>
+              <p class="mt-1 text-xs text-ink-400">{stat.detail}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Provider shares -->
+        <div class="mt-12 rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8">
+          <h3 class="text-center text-sm font-semibold uppercase tracking-wider text-ink-400">
+            Approximate Market Share · Cloud Infrastructure (Q1 2026)
+          </h3>
+          <div class="mt-6 grid gap-4 sm:grid-cols-3">
+            {providers.map((p) => (
+              <div class="text-center">
+                <p class="text-2xl font-bold text-white">{p.share}</p>
+                <p class="mt-1 font-medium text-cloud-300">{p.name}</p>
+                <p class="mt-0.5 text-xs text-ink-500">{p.note}</p>
+              </div>
+            ))}
+          </div>
+          <p class="mt-6 text-center text-xs text-ink-500">
+            Sources: Synergy Research Group, Gartner, Fortune Business Insights, industry reports (2026). Figures are approximate and vary by methodology.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trends -->
+    <section id="trends" class="section-padding">
+      <div class="container-narrow">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            Defining Trends
+          </h2>
+          <p class="mt-4 text-ink-300">
+            Four forces reshaping how organizations design, operate, and govern cloud platforms in 2026 and beyond.
+          </p>
+        </div>
+
+        <div class="mt-14 grid gap-6 md:grid-cols-2">
+          {trends.map((trend) => (
+            <article class="card p-6 sm:p-8">
+              <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-cloud-500/15 text-cloud-400">
+                {trend.icon === 'cpu' && (
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" />
+                  </svg>
+                )}
+                {trend.icon === 'layers' && (
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L2.25 12l4.179 2.25M12 14.25l5.571-3m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l4.179 2.25L12 21.75" />
+                  </svg>
+                )}
+                {trend.icon === 'globe' && (
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                  </svg>
+                )}
+                {trend.icon === 'leaf' && (
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+                  </svg>
+                )}
+              </div>
+              <h3 class="text-xl font-semibold text-white">{trend.title}</h3>
+              <p class="mt-3 text-sm leading-relaxed text-ink-300">{trend.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Opportunity -->
+    <section id="opportunity" class="section-padding border-t border-white/5 bg-gradient-to-b from-cloud-950/30 to-ink-950">
+      <div class="container-narrow">
+        <div class="mx-auto max-w-3xl text-center">
+          <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            A Category-Defining Digital Asset
+          </h2>
+          <p class="mt-5 text-lg text-ink-300">
+            <strong class="text-white">cloudinnovationnetwork.com</strong> sits at the precise intersection of one of the largest and fastest-growing technology markets on earth. Whether you are building a media brand, an analyst platform, a consulting practice, or a community around modern infrastructure, this domain provides instant category authority.
+          </p>
+
+          <ul class="mt-10 space-y-4 text-left text-ink-300">
+            <li class="flex gap-3">
+              <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cloud-500/20 text-cloud-400">
+                <svg class="h-3 w-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </span>
+              <span>Exact-match brand for cloud innovation, research, and thought leadership</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cloud-500/20 text-cloud-400">
+                <svg class="h-3 w-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </span>
+              <span>Ideal for media, events, education, consulting, or platform initiatives</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cloud-500/20 text-cloud-400">
+                <svg class="h-3 w-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </span>
+              <span>Clean, memorable, and globally relevant across English-speaking markets</span>
+            </li>
+          </ul>
+
+          <div class="mt-12">
+            <a
+              href="mailto:sales@desertrich.com?subject=Serious%20Domain%20Inquiry%20%E2%80%94%20cloudinnovationnetwork.com"
+              class="btn-primary text-base !px-8 !py-3.5"
+            >
+              Contact sales@desertrich.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
