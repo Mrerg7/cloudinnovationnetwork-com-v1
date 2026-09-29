@@ -7,14 +7,18 @@ interface Props {
   ogImage?: string;
   canonical?: string;
   noindex?: boolean;
+  keywords?: string;
 }
 
+const DOMAIN = 'cloudinnovationnetwork.com';
+
 const {
-  title = 'Cloud Innovation Network | The Future of Cloud Computing',
-  description = 'Cloud Innovation Network explores the evolving landscape of cloud computing, AI-driven infrastructure, hybrid architectures, and the technologies shaping the next decade of digital transformation.',
-  ogImage = 'https://cloudinnovationnetwork.com/og-image.png',
+  title = `${DOMAIN} | Premium Domain for Sale | Cloud Innovation Network`,
+  description = `${DOMAIN} is for sale. Premium .com for cloud, AI infrastructure & enterprise tech. Secure escrow transfer. Make an offer or request pricing today.`,
+  ogImage = 'https://cloudinnovationnetwork.com/favicon.svg',
   canonical = 'https://cloudinnovationnetwork.com/',
   noindex = false,
+  keywords = 'buy .com domains, cloudinnovationnetwork.com for sale, premium domain names, investment domains, cloud domains, brandable tech domains, domain marketplace',
 } = Astro.props;
 
 const jsonLd = {
@@ -47,6 +51,49 @@ const jsonLd = {
         availableLanguage: 'English',
       },
     },
+    {
+      '@type': 'Product',
+      '@id': 'https://cloudinnovationnetwork.com/#domain-product',
+      name: 'cloudinnovationnetwork.com',
+      category: 'Domain Name',
+      description:
+        'Premium .com domain for sale. Ideal for cloud media, analyst platform, consulting, events, education, or AI infrastructure brand. Secure escrow transfer.',
+      image: 'https://cloudinnovationnetwork.com/favicon.svg',
+      url: 'https://cloudinnovationnetwork.com/',
+      brand: {
+        '@type': 'Brand',
+        name: 'Cloud Innovation Network',
+      },
+      offers: {
+        '@type': 'Offer',
+        url: 'https://cloudinnovationnetwork.com/',
+        priceCurrency: 'USD',
+        price: '0',
+        description: 'Priced on application — submit an offer via sales@desertrich.com. Secure escrow transfer.',
+        availability: 'https://schema.org/InStock',
+        itemCondition: 'https://schema.org/NewCondition',
+        seller: {
+          '@id': 'https://cloudinnovationnetwork.com/#organization',
+        },
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://cloudinnovationnetwork.com/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Insights',
+          item: 'https://cloudinnovationnetwork.com/insights/',
+        },
+      ],
+    },
   ],
 };
 ---
@@ -55,14 +102,16 @@ const jsonLd = {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- Primary Meta -->
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
-    <meta name="robots" content={noindex ? 'noindex' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Cloud Innovation Network" />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'} />
     <meta name="google-site-verification" content="ctC6UtZ1cQG9hKS0uf6LW17o2ZRQ_NESVgsvbK1WiQ8" />
     <link rel="canonical" href={canonical} />
 
@@ -72,8 +121,6 @@ const jsonLd = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Cloud Innovation Network" />
     <meta property="og:locale" content="en_US" />
 
@@ -85,20 +132,59 @@ const jsonLd = {
     <meta name="twitter:image" content={ogImage} />
 
     <!-- Theme & Icons -->
-    <meta name="theme-color" content="#0c4a6e" />
-    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#082f49" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
+    <meta name="color-scheme" content="dark light" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
 
-    <!-- Preconnect -->
+    <!-- Performance: preconnect + LCP preload (Cloudflare Free friendly) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://imagedelivery.net" crossorigin />
+    <link rel="dns-prefetch" href="https://imagedelivery.net" />
+    <link
+      rel="preload"
+      as="image"
+      href="https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/6f43edc0-9506-49fb-8bd2-0add1b876a00/public"
+      fetchpriority="high"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Avoid theme FOUC for light/dark toggle -->
+    <script is:inline>
+      try {
+        const t = localStorage.getItem('cin-theme');
+        if (t === 'light') document.documentElement.classList.add('light-mode');
+      } catch (e) {}
+    </script>
 
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- Cloudflare Web Analytics (free, privacy-first). Paste token to enable:
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_TOKEN"}'></script>
+    -->
   </head>
   <body class="min-h-screen flex flex-col">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-white focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-slate-900"
+    >
+      Skip to content
+    </a>
     <slot />
   </body>
 </html>

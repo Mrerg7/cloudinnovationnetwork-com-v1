@@ -5,7 +5,7 @@ compatibility_date = "2026-07-29"
 
 [assets]
 directory = "./dist"
-not_found_handling = "single-page-application"
+not_found_handling = "404-page"
 
 # Optional: bind custom domain later via Cloudflare dashboard or
 # routes = [{ pattern = "cloudinnovationnetwork.com/*", zone_name = "cloudinnovationnetwork.com" }]

@@ -7,12 +7,37 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-size-adjust: 100%;
   }
   body {
     @apply bg-ink-950 text-ink-100 font-sans antialiased;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
   }
   ::selection {
     @apply bg-cloud-500/30 text-white;
+  }
+  :focus-visible {
+    outline: 2px solid #38bdf8;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
@@ -30,9 +55,82 @@
     @apply border-cloud-500/30 bg-white/10;
   }
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-cloud-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cloud-500/25 transition-all duration-200 hover:bg-cloud-400 hover:shadow-cloud-400/40 focus:outline-none focus:ring-2 focus:ring-cloud-400 focus:ring-offset-2 focus:ring-offset-ink-950;
+    @apply inline-flex min-h-[48px] items-center justify-center rounded-full bg-cloud-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cloud-500/25 transition-all duration-200 hover:bg-cloud-400 hover:shadow-cloud-400/40 focus:outline-none focus:ring-2 focus:ring-cloud-400 focus:ring-offset-2 focus:ring-offset-ink-950;
   }
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:border-cloud-400/50 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-cloud-400 focus:ring-offset-2 focus:ring-offset-ink-950;
+    @apply inline-flex min-h-[48px] items-center justify-center rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:border-cloud-400/50 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-cloud-400 focus:ring-offset-2 focus:ring-offset-ink-950;
   }
+}
+
+/* Light mode (toggle via .light-mode on <html>) — keeps same brand, flips surfaces */
+.light-mode body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+.light-mode .bg-ink-950,
+.light-mode .bg-ink-950\/80,
+.light-mode .bg-ink-950\/95,
+.light-mode .bg-ink-900\/40 {
+  background-color: rgba(248, 250, 252, 0.92) !important;
+}
+.light-mode .text-white {
+  color: #0f172a !important;
+}
+.light-mode .text-ink-300,
+.light-mode .text-ink-400 {
+  color: #475569 !important;
+}
+.light-mode .text-ink-500 {
+  color: #64748b !important;
+}
+.light-mode .border-white\/5,
+.light-mode .border-white\/10,
+.light-mode .border-white\/20 {
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+.light-mode .bg-white\/5,
+.light-mode .bg-white\/\[0\.03\],
+.light-mode .bg-white\/\[0\.02\] {
+  background-color: rgba(15, 23, 42, 0.04) !important;
+}
+.light-mode .bg-white\/10 {
+  background-color: rgba(15, 23, 42, 0.08) !important;
+}
+.light-mode .btn-secondary {
+  color: #0f172a !important;
+}
+.light-mode .from-cloud-950\/40 {
+  --tw-gradient-from: rgba(224, 242, 254, 0.6) !important;
+}
+
+/* Reveal on scroll (progressive enhancement, IO-gated) */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* FAQ accordion */
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease-out;
+}
+.faq-item[data-open='true'] .faq-answer {
+  grid-template-rows: 1fr;
+}
+.faq-answer > div {
+  overflow: hidden;
 }
