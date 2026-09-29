@@ -107,22 +107,12 @@ const agentMail = 'mailto:sales@desertrich.com?subject=Domain%20Inquiry%20%E2%80
   <Header />
 
   <main id="main">
-    <!-- SALE HERO: domain-first, above-the-fold CRO -->
-    <section id="sale" class="relative overflow-hidden pt-28 pb-14 sm:pt-36 sm:pb-20 lg:pt-44 lg:pb-24">
-      <img
-        src="https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/6f43edc0-9506-49fb-8bd2-0add1b876a00/public"
-        alt=""
-        class="pointer-events-none absolute inset-0 h-full w-full object-cover"
-        loading="eager"
-        fetchpriority="high"
-        decoding="async"
-        aria-hidden="true"
-      />
-      <div class="pointer-events-none absolute inset-0 bg-ink-950/78" aria-hidden="true"></div>
+    <!-- SALE HERO: minimal, domain-first -->
+    <section id="sale" class="relative overflow-hidden pt-28 pb-12 sm:pt-36 sm:pb-16 lg:pt-40 lg:pb-20">
       <div class="pointer-events-none absolute inset-0 bg-hero-glow" aria-hidden="true"></div>
 
       <div class="container-narrow relative">
-        <div class="mx-auto max-w-4xl text-center">
+        <div class="mx-auto max-w-3xl text-center">
           <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-emerald-300">
             <span class="relative flex h-2 w-2">
               <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
@@ -131,13 +121,12 @@ const agentMail = 'mailto:sales@desertrich.com?subject=Domain%20Inquiry%20%E2%80
             Premium .com · For Sale
           </p>
 
-          <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl break-words">
+          <h1 class="text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl break-words">
             cloudinnovationnetwork<span class="bg-gradient-to-r from-cloud-300 via-cloud-400 to-sky-300 bg-clip-text text-transparent">.com</span>
           </h1>
 
-          <p class="mx-auto mt-5 max-w-2xl text-lg text-ink-200 sm:text-xl">
-            Premium domain for sale for cloud, AI infrastructure &amp; enterprise tech.
-            Secure escrow transfer. Priced on application.
+          <p class="mx-auto mt-5 max-w-xl text-lg text-ink-300">
+            A premium domain for cloud, AI infrastructure &amp; enterprise tech.
           </p>
 
           <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -147,42 +136,27 @@ const agentMail = 'mailto:sales@desertrich.com?subject=Domain%20Inquiry%20%E2%80
             <a href={buyMail} class="btn-secondary w-full sm:w-auto text-base !px-8 !py-3.5" data-cta="hero-buy-now">
               Buy Now via Escrow
             </a>
-            <a href={agentMail} class="w-full text-sm font-medium text-ink-300 underline-offset-4 hover:text-white hover:underline sm:w-auto sm:px-2 min-h-[48px] inline-flex items-center justify-center" data-cta="hero-contact-agent">
-              Contact agent →
-            </a>
           </div>
 
-          <!-- Trust signals -->
-          <ul class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-medium text-ink-300" aria-label="Transaction assurances">
-            <li class="inline-flex items-center gap-1.5">
-              <svg class="h-4 w-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
-              Secure escrow transfer
-            </li>
-            <li class="inline-flex items-center gap-1.5">
-              <svg class="h-4 w-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-              Fast 1–7 day push
-            </li>
-            <li class="inline-flex items-center gap-1.5">
-              <svg class="h-4 w-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg>
-              Confidential &amp; SSL-secured
-            </li>
-            <li class="inline-flex items-center gap-1.5">
-              <svg class="h-4 w-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18zm0 0c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3" /></svg>
-              Exclusive single-owner listing
-            </li>
-          </ul>
-
-          <!-- Domain attributes -->
-          <dl class="mt-10 grid grid-cols-2 gap-3 text-left lg:grid-cols-4">
-            {attributes.map((a) => (
-              <div class="card p-4 sm:p-5">
-                <dt class="text-[11px] font-semibold uppercase tracking-wider text-ink-400">{a.label}</dt>
-                <dd class="mt-1 text-sm font-bold text-white sm:text-base">{a.value}</dd>
-                <dd class="mt-0.5 text-xs text-ink-400">{a.detail}</dd>
-              </div>
-            ))}
-          </dl>
+          <p class="mt-6 text-xs text-ink-500">
+            Secure escrow transfer · Priced on application · <a href={agentMail} class="text-ink-300 underline underline-offset-4 hover:text-white" data-cta="hero-contact-agent">Contact agent</a>
+          </p>
         </div>
+      </div>
+    </section>
+
+    <!-- At a glance: domain attributes (below the fold) -->
+    <section aria-label="Domain details" class="border-t border-white/5">
+      <div class="container-narrow py-10 sm:py-12">
+        <dl class="grid grid-cols-2 gap-3 text-left lg:grid-cols-4">
+          {attributes.map((a) => (
+            <div class="card p-4 sm:p-5">
+              <dt class="text-[11px] font-semibold uppercase tracking-wider text-ink-400">{a.label}</dt>
+              <dd class="mt-1 text-sm font-bold text-white sm:text-base">{a.value}</dd>
+              <dd class="mt-0.5 text-xs text-ink-400">{a.detail}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
 
